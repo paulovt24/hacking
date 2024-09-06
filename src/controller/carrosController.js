@@ -1,5 +1,7 @@
 import * as db from '../repository/carrosRepository.js'
 
+import multer from 'multer';
+
 import { Router } from 'express'
 
 const endpoints = Router();
@@ -60,11 +62,31 @@ endpoints.put ('/carros/:id', async (req,resp) => {
     }
 })
 
+let uploadimagem = multer({dest: './storage/imagem'})
+endpoints.put ('/carros/:id/imagem', uploadimagem.single('imagem'), async (req,resp) => {
+
+    try {
+        let id = req.params.id
+        let caminhoimagem = req.file.path
+
+       
+        let linhasAfetadas = await db.alterarimagem (id, caminhoimagem);
+        if (linhasAfetadas == 0)
+            throw new Error('Nenhum carro encontrado')
+        resp.status(200).send()
+    }
+     catch (err) {
+        resp.status(404).send({
+            erro : err.message
+        })
+    }
+})
+
 endpoints.delete ('/carros/:id', async (req,resp) => {
 
     try {
         let id = req.params.id
-        let linhasAfetadas = await db.alterarcarros (id, pessoa);
+        let linhasAfetadas = await db.deletarcarros (id);
         if (linhasAfetadas >=1){
             resp.send();
         }
