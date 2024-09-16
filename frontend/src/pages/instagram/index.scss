@@ -1,135 +1,353 @@
-* {
-    margin: 0px;
-    padding: 0px;
-  }
-  
-  body {
-    background-color: #eee;
-  }
-  
-  #wrapper {
-    width: 500px;
-    height: 50%;
-    overflow: hidden;
-    border: 0px solid #000;
-    margin: 50px auto;
-    padding: 10px;
-  }
-  
-  .main-content {
-    width: 250px;
-    height: 40%;
-    margin: 10px auto;
-    background-color: #fff;
-    border: 2px solid #e6e6e6;
-    padding: 40px 50px;
-  }
-  
-  .header {
-    border: 0px solid #000;
-    margin-bottom: 5px;
-  }
-  
-  .header img {
-    height: 50px;
-    width: 175px;
-    margin: auto;
-    position: relative;
-    left: 40px;
-  }
-  
-  .input-1,
-  .input-2 {
-    width: 100%;
-    margin-bottom: 5px;
-    padding: 8px 12px;
-    border: 1px solid #dbdbdb;
+@charset "UTF-8";
+
+/* CONFIGURAÇÕES GERAIS */
+*{
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    border-radius: 3px;
-  }
-  
-  .overlap-text {
-    position: relative;
-  }
-  
-  .overlap-text a {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    color: #003569;
-    font-size: 14px;
-    text-decoration: none;
-    font-family: 'Overpass Mono', monospace;
-    letter-spacing: -1px;
-  }
-  
-  .btn {
+    font-family: Helvetica;
+}
+
+body{
+    background-color: #fafafa;
+}
+
+/* CONTAINERS */
+
+/* Main Container */
+#main-container{
+    display: flex;
+    margin-top: 3%;
+}
+
+/*banner-container -> imagem da esquerda*/
+/*form-container -> parte da direita (login)*/
+
+#banner-container,
+#form-container{
+    flex: 1 1 0;
+    width: 50%;
+   
+}
+
+#banner-container{
+    text-align: right;
+}
+
+#banner-container img{
     width: 100%;
-    background-color: #3897f0;
-    border: 1px solid #3897f0;
-    padding: 5px 12px;
+    margin-right: 2%;
+    margin-top: 2%;
+    max-width: 380px;
+    
+}
+
+#form-container{
+    text-align: center;
+
+}
+
+/* FORMULÁRIO LOGIN */
+
+/* form-box -> parte do formulário e 'esqueci a senha' */
+
+#form-box{
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    width: 350px;
+    margin-top: 2%;
+  
+}
+
+/*logo-insta -> texto do instagram acima do login*/
+#logo-insta{
+    width: 175px;
+    height: 50px;
+    margin: 5% auto 3%;
+   
+}
+
+/*login-form -> formulário de login*/
+#login-form{
+    margin-top: 1%;
+
+}
+
+/*login-form input -> inputs do formulário de login*/
+#login-form input{
+    display: block;
+    padding: 12px 9px;
+    width: 268px;
+    margin: 5px auto;
+    
+    font-size: 12px;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+   
+}
+
+
+/*botao-desabilitado -> botao de  entrar quando esta desabilitado */
+.botao-desabilitado{
+    background-color: #b2dffc;
     color: #fff;
+    font-size: 0.9em;
+    font-weight: bold;
+
+    width: 268px;
+    margin-top: 2%;
+    border: none;
+    border-radius: 3px;
+    height: 30px;
+    padding: 0;
+}
+
+/*botao-habilitado -> botao de  entrar quando esta habilitado */
+.botao-habilitado{
+    background-color: #50b9ff;
+    color: #fff;
+    font-size: 0.9em;
     font-weight: bold;
     cursor: pointer;
+
+    width: 268px;
+    margin-top: 2%;
+    border: none;
     border-radius: 3px;
-  }
+    height: 30px;
+    padding: 0;
+}
+
+/* SEPARADOR -> div da linha(hr)*/
+.separator{
+    position: relative;
   
-  .sub-content {
-    width: 250px;
-    height: 40%;
-    margin: 10px auto;
-    border: 1px solid #e6e6e6;
-    padding: 20px 50px;
+}
+
+/*Linha (hr)*/
+.line{
+    border-top: 1px solid #dbdbdb;
+    width: 268px;
+    margin: 5% auto 5%;
+
+}
+
+/*separator span -> separador "OU" */
+.separator span{
+    color: #bbb;
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 0.9em;
+
+    top: -8px;
     background-color: #fff;
-  }
+    width: 50px;
+    margin-left: -25px;
+
+}
+
+/* FACEBOOK LOGIN -> entrar com o facebook*/
+#facebook-login{
+    margin-bottom: 4%;
   
-  .s-part {
-    text-align: center;
-    font-family: 'Overpass Mono', monospace;
-    word-spacing: -3px;
-    letter-spacing: -2px;
-    font-weight: normal;
-  }
-  
-  .s-part a {
+}
+
+/* FACEBOOK LOGIN -> link para entrar com o facebook*/
+#facebook-login a{
     text-decoration: none;
-    cursor: pointer;
-    color: #3897f0;
-    font-family: 'Overpass Mono', monospace;
-    word-spacing: -3px;
-    letter-spacing: -2px;
-    font-weight: normal;
-  }
-  
-  input:focus {
-      background-color: yellow;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /* youtube link */
-  .youtube{
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 160px;
-    text-align: center;
-    padding: 15px 10px;
-    background: #bb0000;
-    border-radius: 5px;
-  }
-  
-  .youtube a{
+    color: #385185;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+/* imagem logo facebook*/
+#facebook-login img{
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+/* frase: "entrar com o facebook"*/
+#facebook-login span{
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-top: 1px;
+    border: 1px solid yellow;
+}
+
+/* ESQUECEU A SENHA */
+#forgot-pass{
+    margin: 4% 0 4% 0;
+    font-size: 0.8em;
+}
+
+/* link ESQUECEU A SENHA */
+#forgot-pass a{
     text-decoration: none;
-    color: #fff;
-    text-transform: capitalize;
-    letter-spacing: 1px;
-  }
+    color: #373799;
+}
+
+/* CONTAINER DE REGISTRO -> div do Cadastre-se */
+#register-container{
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    width: 350px;
+    margin-top: 2%;
+    padding: 3%;
+   
+}
+
+/*texto: Não tem uma conta? Cadastre-se*/
+#register-container p{
+    font-size: 1em;
+    color: #262626;
+}
+
+/*link do Cadastre-se */
+#register-container a{
+    color: #4a95f6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* div OBTENHA O APLICATIVO */  
+#get-app-container{
+    text-align: center;
+    width: 350px;
+    margin-top: 5%;
+ 
+}
+
+/*texto: OBTENHA O APLICATIVO */  
+#get-app-container p{
+    margin: 4% 0;
+    font-size: 1em;
+}
+
+/*links para OBTER O APLICATIVO */  
+#get-app-container a{
+    text-decoration: none;
+   
+}
+
+/*imagens dos meios para obter APLICATIVO */
+#get-app-container img{
+    width: 136px;
+    height: 40px;
+}
+
+/* FOOTER -> div do rodape */
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+
+}
+
+/*lista dos links do rodape*/
+footer #footer-links{
+    display: flex;
+    list-style: none;
+  
+}
+
+#footer-links{
+    margin-bottom: 1%;
+}
+
+#footer-links li{
+    margin: 0 5px;
+}
+
+/*link dos links do rodape*/
+#footer-links a,
+
+
+#copyright{
+    text-decoration: none;
+    color: #8e8e8e;
+    font-size: 0.8em;
+}
+
+#copyright{
+    margin-top: 2%;
+}
+
+@media (max-width: 450px) {
+    body{
+        background-color: #fff;
+    }
+
+    #banner-container{
+        display: none;
+    }
+
+    #main-container,
+    #form-box{
+        margin-top: 3%;
+    }
+
+    .separator span{
+        font-size: 0.9em;
+        top: -7px;
+    }
+
+    #facebook-login{
+        margin-bottom: 4%;
+    }
+
+    #facebook-login img{
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+    }
+    
+    #facebook-login span{
+        font-size: 1em;
+    }
+
+    /* CONTAINER DE REGISTRO */
+    #register-container{
+        margin: -2% 0 2% 0;
+    }
+
+    /* OBTENHA O APLICATIVO */  
+    #get-app-container{
+        margin: -0.5% 0;
+    }
+
+    #get-app-container p{
+        margin: 3% 0;
+        font-size: 1em;
+    }
+    
+    #get-app-container img{
+        width: 120px;
+        height: 35px;
+    }
+
+    #form-container,
+    #form-box,
+    #register-container,
+    #get-app-container{
+        width: 100%;
+        border: none;
+    }
+
+    /* FOOTER */
+    footer{
+        width: 90%;
+        text-align: left;
+    }
+
+    #footer-links{
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 4%;
+    }
+}
