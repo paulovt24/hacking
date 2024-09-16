@@ -1,13 +1,13 @@
-import * as db from '../repository/listaNegraRepository.js'
+import * as db from '../repository/userRepository.js'
 
 import { Router } from 'express'
 
 const endpoints = Router();
 
-endpoints.get ('/listaNegra/', async (req,resp) => {
+endpoints.get ('/user/', async (req,resp) => {
 
     try {
-        let registro = await db.consultarlistaNegra()
+        let registro = await db.consultarUser()
         resp.send (registro)
         
     }
@@ -17,12 +17,12 @@ endpoints.get ('/listaNegra/', async (req,resp) => {
         })
     }
 })
-endpoints.post('/listaNegra/', async (req,resp) => {
+endpoints.post('/user/', async (req,resp) => {
 
     try {
         let pessoa = req.body;
 
-        let id = await db.inserirlistaNegra(pessoa)
+        let id = await db.inserirUser(pessoa)
 
         resp.send({
             novoId: id
@@ -36,13 +36,13 @@ endpoints.post('/listaNegra/', async (req,resp) => {
     }
 })
 
-endpoints.put ('/listaNegra/:id', async (req,resp) => {
+endpoints.put ('/user/:id', async (req,resp) => {
 
     try {
         let id = req.params.id
         let pessoa = req.body
 
-        let linhasAfetadas = await db.alterarlistaNegra (id, pessoa);
+        let linhasAfetadas = await db.alterarUser (id, pessoa);
         if (linhasAfetadas >=1){
             resp.send();
         }
@@ -58,11 +58,11 @@ endpoints.put ('/listaNegra/:id', async (req,resp) => {
     }
 })
 
-endpoints.delete ('/listaNegra/:id', async (req,resp) => {
+endpoints.delete ('/user/:id', async (req,resp) => {
 
     try {
         let id = req.params.id
-        let linhasAfetadas = await db.deletarlistaNegra (id);
+        let linhasAfetadas = await db.deletarUser (id);
         if (linhasAfetadas >=1){
             resp.send();
         }
